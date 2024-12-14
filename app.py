@@ -25,6 +25,11 @@ try:
 except LookupError:
     nltk.download('wordnet')
 
+try:
+    nltk.data.find('tokenizers/punkt_tab/english/')
+except LookupError:
+    nltk.download('punkt_tab')
+
 # Function to connect to the SQLite database
 def create_connection():
     connection = sqlite3.connect('yoga_asanas.db')  # Database file name
